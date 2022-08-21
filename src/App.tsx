@@ -26,7 +26,7 @@ const App = () => {
   return (
     <div className="App">
       <div className="App__header">
-        <h1 className="App__title">Missions</h1>
+        <h1>Missions</h1>
         <div>
           <select className='App__select' name="sort" id="sort" onChange={(e) => sortNameChanged(e.target.value)}>
             <option value="mission-name">Sort by Mission</option>
@@ -39,10 +39,12 @@ const App = () => {
             
           </select>
         </div>
+      </div>
+      <div className="App__body">
         <LaunchList handleIdChange={handleIdChange} limit={limit} sort_name={sortName} setId={setId}/>
+        <LaunchDetailes id={id} />
       </div>
       
-      <LaunchDetailes id={id} />
     </div>
   );
 };

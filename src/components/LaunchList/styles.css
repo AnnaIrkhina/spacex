@@ -2,7 +2,7 @@
     height: 100vh;
     overflow: hidden auto;
     background-color: rgb(255, 255, 255);
-    width: 100%;
+    width: 40%;
   }
 
   .LaunchList__title {
@@ -20,7 +20,7 @@
   }
   
   .LaunchCard__item {
-    border: 1px solid #f8aeae;
+    border: 1px solid #bcbbbb;
     cursor: pointer;
     border-radius: 15px;
     background-color: whitesmoke;
