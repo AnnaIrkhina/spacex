@@ -1,11 +1,12 @@
 import * as React from 'react';
-import {useState} from 'react';
 import { LaunchesPastQueryQuery } from '../../generated/graphql';
 import './styles.css';
 import LaunchCard from './LaunchCard'
 
 export interface IOwnProps {
     handleIdChange: (newId: number) => void;
+    limit: number,
+    sort_name: string,
   }
   
   interface IProps extends IOwnProps {
@@ -16,8 +17,9 @@ const className = 'LaunchList';
 
 const LaunchList: React.FC<IProps> = ({ data, handleIdChange }) =>{
 
-  return(<div className={className}>
-    <h1 className={`${className}__title`}>Missions</h1>
+  return(
+  <div className={className}>
+    
     <div className={`${className}__container`}>
         <ul className={`${className}__list`}>
         {!!data.launchesPast &&

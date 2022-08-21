@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { useState } from 'react';
 import { LaunchDetailesQueryQuery } from '../../generated/graphql';
 import './styles.css';
 
@@ -27,7 +26,7 @@ const LaunchDetailes: React.FC<IProps> = ({ data }) => {
           return(
             <div key={i} className={`${className}__ship-card`}>
               <span>{ship?.name}</span><span>({ship?.year_built})</span>
-              <img className={`${className}__img`} src={ship?.image|| ""}/>
+              <img className={`${className}__img`} src={ship?.image|| ""} alt={launch.mission_name || ""}/>
             </div>
           )
         })}
