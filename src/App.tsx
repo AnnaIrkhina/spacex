@@ -9,6 +9,7 @@ const App = () => {
   const [id, setId] = React.useState(77);
   const [limit, setLimit] = React.useState(5);
   const [sortName, setSortName] = React.useState('mission-name');
+  const [missionName, setMissionName] = React.useState('');
 
   const handleIdChange = React.useCallback((newId:number) => {
     setId(newId);
@@ -22,6 +23,9 @@ const App = () => {
     setLimit(parseInt(value));
   }
 
+  const missionNameChange = (value: string) => {
+    setMissionName(value);
+  }
 
   return (
     <div className="App">
@@ -38,10 +42,11 @@ const App = () => {
             <option value="50">Show 50 Missions</option>
             
           </select>
+          <input type="text" className='App__select' value={missionName} onChange={(e) => missionNameChange(e.target.value)}/>
         </div>
       </div>
       <div className="App__body">
-        <LaunchList handleIdChange={handleIdChange} limit={limit} sort_name={sortName} setId={setId}/>
+        <LaunchList handleIdChange={handleIdChange} limit={limit} sort_name={sortName} setId={setId} mission_name={missionName} />
         <LaunchDetailes id={id} />
       </div>
       

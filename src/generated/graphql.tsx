@@ -1330,13 +1330,14 @@ export type LaunchDetailesQueryQueryVariables = Exact<{
 
 export type LaunchDetailesQueryQuery = { __typename?: 'Query', launch?: Maybe<{ __typename?: 'Launch', mission_name?: Maybe<string>, details?: Maybe<string>, launch_date_unix?: Maybe<any>, id?: Maybe<string>, links?: Maybe<{ __typename?: 'LaunchLinks', article_link?: Maybe<string>, video_link?: Maybe<string> }>, rocket?: Maybe<{ __typename?: 'LaunchRocket', rocket_name?: Maybe<string> }>, ships?: Maybe<Array<Maybe<{ __typename?: 'Ship', name?: Maybe<string>, image?: Maybe<string>, year_built?: Maybe<number> }>>> }> };
 
-export type LaunchesPastQueryQueryVariables = Exact<{
-  limit: Scalars['Int'];
+export type LaunchesPastQueryVariables = Exact<{
   sort_name: Scalars['String'];
+  limit: Scalars['Int'];
+  mission_name: Scalars['String'];
 }>;
 
 
-export type LaunchesPastQueryQuery = { __typename?: 'Query', launchesPast?: Maybe<Array<Maybe<{ __typename?: 'Launch', mission_name?: Maybe<string>, id?: Maybe<string>, launch_date_utc?: Maybe<any>, details?: Maybe<string> }>>> };
+export type LaunchesPastQuery = { __typename?: 'Query', launchesPast?: Maybe<Array<Maybe<{ __typename?: 'Launch', mission_name?: Maybe<string>, id?: Maybe<string>, launch_date_utc?: Maybe<any>, details?: Maybe<string> }>>> };
 
 
 export const LaunchDetailesQueryDocument = gql`
@@ -1389,9 +1390,13 @@ export function useLaunchDetailesQueryLazyQuery(baseOptions?: Apollo.LazyQueryHo
 export type LaunchDetailesQueryQueryHookResult = ReturnType<typeof useLaunchDetailesQueryQuery>;
 export type LaunchDetailesQueryLazyQueryHookResult = ReturnType<typeof useLaunchDetailesQueryLazyQuery>;
 export type LaunchDetailesQueryQueryResult = Apollo.QueryResult<LaunchDetailesQueryQuery, LaunchDetailesQueryQueryVariables>;
-export const LaunchesPastQueryDocument = gql`
-    query LaunchesPastQuery($limit: Int!, $sort_name: String!) {
-  launchesPast(sort: $sort_name, limit: $limit) {
+export const LaunchesPastDocument = gql`
+    query LaunchesPast($sort_name: String!, $limit: Int!, $mission_name: String!) {
+  launchesPast(
+    sort: $sort_name
+    limit: $limit
+    find: {mission_name: $mission_name}
+  ) {
     mission_name
     id
     launch_date_utc
@@ -1401,30 +1406,31 @@ export const LaunchesPastQueryDocument = gql`
     `;
 
 /**
- * __useLaunchesPastQueryQuery__
+ * __useLaunchesPastQuery__
  *
- * To run a query within a React component, call `useLaunchesPastQueryQuery` and pass it any options that fit your needs.
- * When your component renders, `useLaunchesPastQueryQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * To run a query within a React component, call `useLaunchesPastQuery` and pass it any options that fit your needs.
+ * When your component renders, `useLaunchesPastQuery` returns an object from Apollo Client that contains loading, error, and data properties
  * you can use to render your UI.
  *
  * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
  *
  * @example
- * const { data, loading, error } = useLaunchesPastQueryQuery({
+ * const { data, loading, error } = useLaunchesPastQuery({
  *   variables: {
- *      limit: // value for 'limit'
  *      sort_name: // value for 'sort_name'
+ *      limit: // value for 'limit'
+ *      mission_name: // value for 'mission_name'
  *   },
  * });
  */
-export function useLaunchesPastQueryQuery(baseOptions: Apollo.QueryHookOptions<LaunchesPastQueryQuery, LaunchesPastQueryQueryVariables>) {
+export function useLaunchesPastQuery(baseOptions: Apollo.QueryHookOptions<LaunchesPastQuery, LaunchesPastQueryVariables>) {
         const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useQuery<LaunchesPastQueryQuery, LaunchesPastQueryQueryVariables>(LaunchesPastQueryDocument, options);
+        return Apollo.useQuery<LaunchesPastQuery, LaunchesPastQueryVariables>(LaunchesPastDocument, options);
       }
-export function useLaunchesPastQueryLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<LaunchesPastQueryQuery, LaunchesPastQueryQueryVariables>) {
+export function useLaunchesPastLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<LaunchesPastQuery, LaunchesPastQueryVariables>) {
           const options = {...defaultOptions, ...baseOptions}
-          return Apollo.useLazyQuery<LaunchesPastQueryQuery, LaunchesPastQueryQueryVariables>(LaunchesPastQueryDocument, options);
+          return Apollo.useLazyQuery<LaunchesPastQuery, LaunchesPastQueryVariables>(LaunchesPastDocument, options);
         }
-export type LaunchesPastQueryQueryHookResult = ReturnType<typeof useLaunchesPastQueryQuery>;
-export type LaunchesPastQueryLazyQueryHookResult = ReturnType<typeof useLaunchesPastQueryLazyQuery>;
-export type LaunchesPastQueryQueryResult = Apollo.QueryResult<LaunchesPastQueryQuery, LaunchesPastQueryQueryVariables>;
+export type LaunchesPastQueryHookResult = ReturnType<typeof useLaunchesPastQuery>;
+export type LaunchesPastLazyQueryHookResult = ReturnType<typeof useLaunchesPastLazyQuery>;
+export type LaunchesPastQueryResult = Apollo.QueryResult<LaunchesPastQuery, LaunchesPastQueryVariables>;

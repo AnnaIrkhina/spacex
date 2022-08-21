@@ -1,13 +1,14 @@
 import * as React from 'react';
-import { useLaunchesPastQueryQuery } from '../../generated/graphql';
+import { useLaunchesPastQuery  } from '../../generated/graphql';
 import LaunchList, {IOwnProps} from './LaunchList';
 
 const LaunchListContainer :React.FC<IOwnProps> = (props) => {
-  const { data, error, loading, refetch } = useLaunchesPastQueryQuery({
-    variables: { limit: 10, sort_name: "mission_name" },
+  const {limit, sort_name, setId, mission_name} = props;
+  const { data, error, loading, refetch } = useLaunchesPastQuery({
+    variables: { limit: limit, sort_name: sort_name, mission_name: mission_name || "" },
   });
 
-  const {limit, sort_name, setId} = props;
+
 
 
   React.useEffect(() => {

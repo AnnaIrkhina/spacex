@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { LaunchesPastQueryQuery } from '../../generated/graphql';
+import { LaunchesPastQuery } from '../../generated/graphql';
 import './styles.css';
 import LaunchCard from './LaunchCard'
 
@@ -8,10 +8,11 @@ export interface IOwnProps {
     setId: (id: number ) => void;
     limit: number,
     sort_name: string,
+    mission_name?: string
   }
   
   interface IProps extends IOwnProps {
-    data: LaunchesPastQueryQuery;
+    data: LaunchesPastQuery;
   }
 
   export interface ILaunch {

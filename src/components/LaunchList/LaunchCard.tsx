@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { LaunchesPastQueryQuery } from '../../generated/graphql';
+import { LaunchesPastQuery } from '../../generated/graphql';
 import './styles.css';
 
 interface ILaunchCard {

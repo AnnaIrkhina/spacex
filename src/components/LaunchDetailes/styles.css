@@ -2,6 +2,7 @@
   width: 60%;
   display: flex;
   flex-direction: column;
+  padding: 10px;  
 }
 .LaunchDetailes__ships {
   width: 70%;
