@@ -1,28 +1,24 @@
-.MissionList {
+.LaunchList {
     height: 100vh;
     overflow: hidden auto;
     background-color: rgb(255, 255, 255);
-    width: 100%;
-    padding-left: 20px;
-    padding-right: 20px;
+    width: 30%;
   }
 
-  .MissionList__title {
+  .LaunchList__title {
     margin: 20px;
     padding: 20px;
     color: rgb(201, 20, 20);
   }
   
   
-  .MissionList__list {
+  .LaunchList__list {
     list-style: none;
     margin: 0;
     padding: 0;
   }
   
-  .MissionCard__item {
-    padding-top: 20px;
-    padding-bottom: 20px;
+  .LaunchCard__item {
     border: 1px solid #f8aeae;
     cursor: pointer;
     border-radius: 15px;
@@ -30,11 +26,23 @@
     margin: 10px
   }
 
-  .MissionCard__item a {
+  .LaunchCard__details {
+    border: 0;
+    cursor: pointer;
+    border-radius: 15px;
+    background-color: rgb(251, 239, 239, 0.5);
+    margin: 10px
+  }
+
+  .LaunchCard__title {
+    margin: 10px
+  }
+
+  .LaunchCard__item a {
     text-decoration: none;
     color: rgb(15, 19, 35);
     font-weight: bold;
   }
-  .MissionCard__item a:hover {
+  .LaunchCard__item a:hover {
     color: rgb(201, 20, 20);
   }

@@ -1,12 +1,21 @@
 import * as React from 'react';
-import MissionList from './components/MissionList';
+import LaunchList from './components/LaunchList';
+import LaunchDetailes from './components/LaunchDetailes';
 
 import './App.css';
 
 const App = () => {
+
+  const [id, setId] = React.useState(77);
+  const handleIdChange = React.useCallback((newId:number) => {
+    setId(newId);
+  },[]);
+
+
   return (
     <div className="App">
-      <MissionList />
+      <LaunchList handleIdChange={handleIdChange}/>
+      <LaunchDetailes id={id} />
     </div>
   );
 };

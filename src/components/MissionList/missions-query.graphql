@@ -1,9 +1,0 @@
-query MissionList {
-  missions
-    {
-        description
-        manufacturers
-        name
-        website
-  }
-}

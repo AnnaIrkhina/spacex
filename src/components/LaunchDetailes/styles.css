@@ -1,0 +1,19 @@
+.LaunchDetailes {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+}
+.LaunchDetailes__ships {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+}
+
+.LaunchDetailes__ship-card {
+  display: flex;
+  flex-direction: column;
+}
+.LaunchDetailes__img {
+  width: 300px;
+  height: auto;
+}
