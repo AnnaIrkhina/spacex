@@ -7,7 +7,7 @@ const LaunchListContainer :React.FC<IOwnProps> = (props) => {
     variables: { limit: 10, sort_name: "mission_name" },
   });
 
-  const {limit, sort_name} = props;
+  const {limit, sort_name, setId} = props;
 
 
   React.useEffect(() => {
@@ -21,6 +21,7 @@ const LaunchListContainer :React.FC<IOwnProps> = (props) => {
   if (error || !data) {
     return <div>ERROR</div>;
   }
+
 
   return <LaunchList data={data} {...props}/>;
 };

@@ -5,12 +5,20 @@ import LaunchCard from './LaunchCard'
 
 export interface IOwnProps {
     handleIdChange: (newId: number) => void;
+    setId: (id: number ) => void;
     limit: number,
     sort_name: string,
   }
   
   interface IProps extends IOwnProps {
     data: LaunchesPastQueryQuery;
+  }
+
+  export interface ILaunch {
+        mission_name?: String | undefined;
+        id?: String | undefined;
+        launch_date_utc?: any;
+        details?: String | undefined;
   }
 
 const className = 'LaunchList';
