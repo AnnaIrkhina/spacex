@@ -1,9 +1,19 @@
 import * as React from 'react';
 import { MissionListQuery } from '../../generated/graphql';
 import './styles.css';
+import MissionCard from './MissionCard'
 
 interface Props {
   data: MissionListQuery;
+}
+
+interface IMissionCard {
+    mission: {
+        description?: string | null | undefined;
+        manufacturers?: (string | null)[] | null | undefined;
+        name?: string | null | undefined;
+        website?: string | null | undefined;
+    }
 }
 
 const className = 'MissionList';
@@ -15,13 +25,7 @@ const MissionList: React.FC<Props> = ({ data }) => (
       {!!data.missions &&
         data.missions.map(
           (mission, i) =>
-            !!mission && (
-              <li key={i} className={`${className}__item`}>
-                <h2>{mission.name} ({mission.manufacturers})</h2>
-                <div>{mission.description}</div>
-                {!!mission.website && <a href={mission.website || ""}>{mission.website}</a>}
-              </li>
-            ),
+            !!mission && <MissionCard key={i} mission={mission}/>
         )}
     </ul>
   </div>
