@@ -2,7 +2,7 @@
     height: 100%;
     overflow: hidden auto;
     background-color: rgb(255, 255, 255);
-    width: 40%;
+    width: 100%;
   }
 
   .LaunchList__title {
@@ -17,6 +17,10 @@
     margin: 0;
     padding: 0;
     overflow: hidden;
+  }
+
+  .LaunchCard {
+    padding: 10px;
   }
   
   .LaunchCard__item {
@@ -46,4 +50,24 @@
   }
   .LaunchCard__item a:hover {
     color: rgb(201, 20, 20);
+  }
+  .LaunchDetailes {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;  
+  }
+  .LaunchCard__ships {
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .LaunchCard__ship-cardd {
+    display: flex;
+    flex-direction: column;
+  }
+  .LaunchCard__img {
+    width: 300px;
+    height: auto;
   }
