@@ -27,11 +27,15 @@
 }
 
 
-.App__select {
+.App__select, 
+.App__input{
     border: 1px solid #bcbbbb;
     border-radius: 15px;
     background-color: whitesmoke;
     margin: 10px;
     padding: 10px;
+}
+.App__input {
+  width: 250px;
 }
 

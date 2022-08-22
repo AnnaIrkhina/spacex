@@ -35,10 +35,14 @@ const App = () => {
           <select className='App__select' name="limit" id="limit" onChange={(e) => limitChanged(e.target.value)}>
             <option value="5">Show 5 Missions</option>
             <option value="15">Show 15 Missions</option>
-            <option value="50">Show 50 Missions</option>
-            
+            <option value="50">Show 50 Missions</option>  
           </select>
-          <input type="text" className='App__select' value={missionName} onChange={(e) => missionNameChange(e.target.value)}/>
+          <input 
+            type="text" 
+            className='App__input' 
+            value={missionName} 
+            placeholder="Search, start type Mission titile"
+            onChange={(e) => missionNameChange(e.target.value)}/>
         </div>
       </div>
       <div className="App__body">

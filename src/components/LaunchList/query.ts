@@ -9,13 +9,7 @@ query launchesPast($sort_name: String!, $limit: Int!, $mission_name: String!) {
     launch_date_unix
 
     details
-    rocket {
-      rocket_name
-    }
-    ships {
-      image
-      year_built
-    }
+
     links {
       article_link
       video_link

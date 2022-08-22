@@ -21,6 +21,8 @@
 
   .LaunchCard {
     padding: 10px;
+    display: flex;
+    flex-direction: column;
   }
   
   .LaunchCard__item {
@@ -35,7 +37,6 @@
     border: 0;
     cursor: pointer;
     border-radius: 15px;
-    background-color: rgb(251, 239, 239, 0.5);
     margin: 10px
   }
 
@@ -56,18 +57,4 @@
     display: flex;
     flex-direction: column;
     padding: 10px;  
-  }
-  .LaunchCard__ships {
-    width: 70%;
-    display: flex;
-    flex-direction: row;
-  }
-  
-  .LaunchCard__ship-cardd {
-    display: flex;
-    flex-direction: column;
-  }
-  .LaunchCard__img {
-    width: 300px;
-    height: auto;
   }

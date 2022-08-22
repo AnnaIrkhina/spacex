@@ -29,27 +29,18 @@ const LaunchCard = ( props: ILaunchProps) => {
     return(
         <>
         {!!launch && launch.details?
-            <div className={className}>
+                <>
                 {!!{launch} && 
                     <li className={`${className}__item`}>
-                        {!!launch.details && 
+                        {!!launch?.details && 
                         <div className={className}>
-                            <h2>{launch.mission_name}({dt})</h2>
+                            <h2>{launch?.mission_name} ({dt})</h2>
                             <div className={`${className}__details`}>{launch.details}</div>
                             <a href={launch.links?.article_link || ""} target="blank" >More details...</a>
-                            <h3>{launch.rocket?.rocket_name}</h3>
-                            <div className={`${className}__ships`}>
-                            {!!launch.ships && launch.ships?.map((ship, i) =>{
-                            return(
-                                <div key={i} className={`${className}__ship-card`}>
-                                    <span>{ship?.name}</span><span>({ship?.year_built})</span>
-                                    <img className={`${className}__img`} src={ship?.image|| ""} alt={launch.mission_name || ""}/>
-                                </div>)})}
-                            </div>
                         </div>}
-                    </li>}
-            </div>:
-            <></>}
+                    </li>}</>
+            :<></>
+            }
         </>
     );
 };
