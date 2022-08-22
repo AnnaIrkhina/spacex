@@ -1330,7 +1330,7 @@ export type LaunchesPastQueryVariables = Exact<{
 }>;
 
 
-export type LaunchesPastQuery = { __typename?: 'Query', launchesPast?: Maybe<Array<Maybe<{ __typename?: 'Launch', mission_name?: Maybe<string>, id?: Maybe<string>, launch_date_utc?: Maybe<any>, launch_date_unix?: Maybe<any>, details?: Maybe<string>, rocket?: Maybe<{ __typename?: 'LaunchRocket', rocket_name?: Maybe<string> }>, ships?: Maybe<Array<Maybe<{ __typename?: 'Ship', image?: Maybe<string>, year_built?: Maybe<number> }>>>, links?: Maybe<{ __typename?: 'LaunchLinks', article_link?: Maybe<string>, video_link?: Maybe<string> }> }>>> };
+export type LaunchesPastQuery = { __typename?: 'Query', launchesPast?: Maybe<Array<Maybe<{ __typename?: 'Launch', mission_name?: Maybe<string>, id?: Maybe<string>, launch_date_utc?: Maybe<any>, details?: Maybe<string>, links?: Maybe<{ __typename?: 'LaunchLinks', article_link?: Maybe<string>, video_link?: Maybe<string> }> }>>> };
 
 
 export const LaunchesPastDocument = gql`
@@ -1343,15 +1343,7 @@ export const LaunchesPastDocument = gql`
     mission_name
     id
     launch_date_utc
-    launch_date_unix
     details
-    rocket {
-      rocket_name
-    }
-    ships {
-      image
-      year_built
-    }
     links {
       article_link
       video_link

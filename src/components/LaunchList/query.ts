@@ -6,10 +6,7 @@ query launchesPast($sort_name: String!, $limit: Int!, $mission_name: String!) {
     mission_name
     id
     launch_date_utc
-    launch_date_unix
-
     details
-
     links {
       article_link
       video_link
