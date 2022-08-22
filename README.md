@@ -4,7 +4,7 @@ clone project to local folder wiht comand git clone  'git clone https://github.c
 you can stay on master or switch to branch show-one-misttion-details
 
 do command 
-###'yarn' 
+### `yarn` 
 to install dependencies
 
 then, you can run:
