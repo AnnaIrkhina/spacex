@@ -1,10 +1,11 @@
-# Getting Started with Create React App
+# Getting Started 
+## clone project to local folder wiht comand git clone  'git clone https://github.com/AnnaIrkhina/spacex.git'
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## you can stay on master or switch to branch show-one-misttion-details
 
-## Available Scripts
+## do command 'yarn' to install dependencies
 
-In the project directory, you can run:
+then, you can run:
 
 ### `yarn start`
 
