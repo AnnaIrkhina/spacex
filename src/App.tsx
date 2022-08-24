@@ -11,7 +11,6 @@ const App = () => {
   const [missionName, setMissionName] = React.useState('');
   const [debouncedMissionName, setDebouncedMissionName] =  React.useState('')
 
-
   const sortNameChanged = (value: string) => {
     setSortName(value);
   }
