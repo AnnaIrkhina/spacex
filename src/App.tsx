@@ -1,5 +1,6 @@
 import * as React from 'react';
 import LaunchList from './components/LaunchList';
+import debounce from 'lodash.debounce';
 
 import './App.css';
 
@@ -8,10 +9,10 @@ const App = () => {
   const [limit, setLimit] = React.useState(5);
   const [sortName, setSortName] = React.useState('mission_name');
   const [missionName, setMissionName] = React.useState('');
+  const [debouncedMissionName, setDebouncedMissionName] =  React.useState('')
 
 
   const sortNameChanged = (value: string) => {
-    console.log('sortNameChanged', value)
     setSortName(value);
   }
 
@@ -19,9 +20,15 @@ const App = () => {
     setLimit(parseInt(value));
   }
 
-  const missionNameChange = (value: string) => {
+  function missionNameChange (value: string)  {
     setMissionName(value);
+    debouncedSave(value);
   }
+
+  const debouncedSave = React.useCallback(
+		debounce((value: string) => setDebouncedMissionName(value), 1000),
+		[]
+	);
 
   return (
     <div className="App">
@@ -46,7 +53,7 @@ const App = () => {
         </div>
       </div>
       <div className="App__body">
-        <LaunchList limit={limit} sort_name={sortName} mission_name={missionName} />
+        <LaunchList limit={limit} sort_name={sortName} mission_name={debouncedMissionName} />
       </div>
       
     </div>
